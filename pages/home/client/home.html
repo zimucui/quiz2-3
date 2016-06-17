@@ -1,0 +1,14 @@
+<template name="home">
+<style type="text/css">
+body{
+	background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/3b/Picture_of_Louis_Brandeis.jpg);
+}
+</style>
+  <h1 style="color:white;">Brandeis Comment My Professor</h1>
+  <p style="color:white;">Welcome to my Personal App!</p>
+  {{#if currentUser}}
+     <p style="color:white;">Congratulations for getting logged in!</p>
+  {{else}}
+     <p style="color:white;">You better log in!!!</p>
+  {{/if}}
+</template>

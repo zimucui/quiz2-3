@@ -1,0 +1,41 @@
+<template name="showRatings">
+
+ {{#if currentUser}}
+	<h1>Available comments</h1>
+	<hr>
+	<ul>
+	<li>Professor's name: <input type="text" class="js-name"></li>
+	<li>class code: <input type="text" class="js-offered"></li>
+	<li>academic year: <input type="text" class="js-time"></li>
+	<li>grade you received: <input type="text" class="js-grade"></li>
+	<li>email: <input type="text" class="js-email"></li>
+	<li>meeting days:</li>
+	<input type="checkbox" class="js-mon">Monday<br>
+	<input type="checkbox" class="js-tue">Tuesday<br>
+	<input type="checkbox" class="js-wed">Wednesday<br>
+	<input type="checkbox" class="js-thu">Thursday<br>
+	<input type="checkbox" class="js-fri">Friday<br>
+	<hr>
+	<h3>Please give your personal evaluation about this professor</h3>
+	<textarea type="text" class="js-evaluation" rows="8" column="8"></textarea>
+	<button class="js-addDay">Submit review</button>
+	</ul>
+	<hr>
+	<ul>
+		{{#each r in ratings}}
+			<li>{{r.offeredBy}} offers {{r.classname}}, and the days are shown above. I took this course in {{r.time}}, and the final grade was {{r.grade}}. Here is my opinion about him: {{r.evaluation}}. His/her email address is {{r.email}}</li>
+		{{/each}}
+	</ul>
+
+{{else}}
+	<h2>You must log in to make comments!</h2>
+ {{/if}}
+
+</template>
+
+	
+
+
+
+
+
