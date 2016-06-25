@@ -1,14 +1,24 @@
 <template name="home">
-<style type="text/css">
-body{
-	background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/3b/Picture_of_Louis_Brandeis.jpg);
-}
-</style>
-  <h1 style="color:white;">Brandeis Comment My Professor</h1>
-  <p style="color:white;">Welcome to my Personal App!</p>
+
+
+
+<div class="{{theColor}}">
+  <h1 >Brandeis Comment My Professor</h1>
+  <p>Welcome to my Personal App!</p>
+
+   </div>
   {{#if currentUser}}
-     <p style="color:white;">Congratulations for getting logged in!</p>
+     <p>Congratulations for getting logged in!</p>
   {{else}}
-     <p style="color:white;">You better log in!!!</p>
+     <p>You better log in!!!</p>
   {{/if}}
+  <br>
+  <select class="js-color">
+  	<option>bg-info</option>
+  	<option>bg-warning</option>
+  </select>
+  Color:{{theColor}}<br>
+  Counter:{{theCounter}}<br>
+  <button class="js-pusher">push me</button>
+ 
 </template>

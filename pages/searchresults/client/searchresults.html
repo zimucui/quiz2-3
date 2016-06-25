@@ -1,0 +1,19 @@
+<template name="searchresults">
+	
+  <h1>Search Results</h1>
+  <ul>
+    {{#each r in resultData}}
+    <li>
+		<div class="panel panel-success">
+			<div class="panel-body">
+    			<a href="/showsearch/{{r._id}}"><h4>{{r.offeredBy}}</h4></a>
+    		</div>
+    		 <div>offered [{{r.classname}}] in [{{r.time}}]. The meeting days were: [{{r.days}}]. My final grade received in this course
+         was [{{r.grade}}], and my opinion about this professor and his course is: [{{r.evaluation}}].
+    		 </div>
+    	</div>
+    </li>
+    
+    {{/each}}
+  </ul>
+  </template>

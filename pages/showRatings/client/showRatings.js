@@ -1,3 +1,5 @@
+
+
 Template.showRatings.helpers({
 	ratings:function(){
 		//const name = $(".js-name").val();
@@ -17,34 +19,62 @@ Template.showRatings.events({
 		const email =$(".js-email").val();
 		const time =$(".js-time").val();
 		const mon =$(".js-mon").val();
+		var arr = []
+		if ($('.js-mon').is(":checked")) {
+			arr.push("monday");
+		}
 		const tue =$(".js-tue").val();
+		
+		if ($('.js-tue').is(":checked")) {
+			arr.push("tuesday");
+		}
+		
 		const wed =$(".js-wed").val();
+		
+		if ($('.js-wed').is(":checked")) {
+			arr.push("wednesday");
+		}
 		const thu =$(".js-thu").val();
+		
+		if ($('.js-thu').is(":checked")) {
+			arr.push("thursday");
+		}
 		const fri =$(".js-fri").val();
+		
+		if ($('.js-fri').is(":checked")) {
+			arr.push("friday");
+		}
 		const grade =$(".js-grade").val();
 		const evaluation =$(".js-evaluation").val();
-		const teacher =
-		{offeredBy:name, days:[mon,tue,wed,thu,fri], classname:classname, email:email, time:time, grade:grade, evaluation:evaluation};
-		console.dir(teacher);
-		Rprofessor.insert(teacher);
+		
+		Meteor.call('createComment',name,classname,email,time,arr,grade,evaluation);
+
+		$(".js-evaluation").val("");
+		$(".js-name").val("");
+		$(".js-offered").val("");
+		$(".js-email").val("");
+		$(".js-grade").val("");
+		document.getElementById("1").checked = false;
+		document.getElementById("2").checked = false;
+		document.getElementById("3").checked = false;
+		document.getElementById("4").checked = false;
+		document.getElementById("5").checked = false;
+		$(".js-time").val("");
+
 	}
-
-	
-
-
-
-
-
 
 
 
 })
 
-Template.commentRow.events({
+Template.comment.events({
 	"click .js-delete-comment": function(event){
-		Comments.remove(this._id);
-		console.log("clicked on the x");
+		// Comments.remove(this._id);
 		console.dir(this);
-		Comments.remove(this.comment._id);
+		console.log(this.abc._id);
+		Meteor.call('removeComment',this.abc._id);//"this.abc._id 来自html!!!"
 	}
 })
+
+
+

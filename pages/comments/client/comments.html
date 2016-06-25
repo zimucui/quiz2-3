@@ -2,7 +2,7 @@
 
   {{#if currentUser}}
   	<h1>Please give me the comment about this web</h1>
-	<input type="text" class="js-user-comment">
+	<input type="text" class="form-control js-user-comment">
 	<br>
 	(please rate the quality of this web: 1 means bad, 2 means so-so, 3 means above average, 4 means good, 5 means excellent)
 	<select class="js-rating-comment">
@@ -12,10 +12,13 @@
 		<option>4</option>
 		<option>5</option>
 	</select>
-	<br>
 	<button class="js-submit-comment btn btn-lg btn-info">
 		Submit Comment
 	</button>
+
+    <p>(NOTE: If you want to refer to professor from other colleges, check out this link)
+    <a href="http://www.ratemyprofessors.com/">rate-my-professor</a>
+    </p>
   {{else}}
 	<h2>You must log in to make comments!</h2>
   {{/if}}
@@ -27,6 +30,8 @@
 	{{/each}}
 
     </ul>
+
+
 </template>
 
 <template name="commentRow">
