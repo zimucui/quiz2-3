@@ -1,1 +1,1 @@
-Meteor.subscribe("rprofessor");
+Meteor.subscribe("rprofessor","tim");

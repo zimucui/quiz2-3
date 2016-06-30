@@ -2,7 +2,7 @@ Meteor.publish("comments",
 	function() {return Comments.find();})
 
 Meteor.publish("rprofessor",
-	function() {return Rprofessor.find();})
+	function(teachername) {return Rprofessor.find({offeredBy:teachername});})
 
 Meteor.publish("userData",function () {
 	if (this.userId) {
@@ -11,4 +11,17 @@ Meteor.publish("userData",function () {
 	} else {
 		this.ready();
 	}
+});
+
+Meteor.publish("settings", function() {
+	if (this.userId) {
+		console.log("logged in");
+		return Settings.find({createdBy: this.userId});
+	} else {
+		// this.ready();
+		console.log("not log in");
+	}
+
+
+	
 });
