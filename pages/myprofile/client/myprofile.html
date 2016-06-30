@@ -1,0 +1,35 @@
+<template name="myprofile">
+
+ {{#if currentUser}}
+	<div class="jumbotron">
+  	<h2>Available comments</h2>
+  	</div>
+	<hr>
+	<ul>
+	<li>first name: <input type="text" class="js-firstname"></li>
+	<li>last name: <input type="text" class="js-lastname"></li>
+	<li>nickname: <input type="text" class="js-nickname"></li>
+	<li>birthyear: <input type="text" class="js-birthyear"></li>
+	<li>email: <input type="text" class="js-email"></li>
+	
+	<a href="http://localhost:3000/profiles"><button class="js-addDay">Submit review</button></a>
+	</ul>
+	<hr>
+	
+
+{{else}}
+	<h2>You must log in to make comments!</h2>
+ {{/if}}
+
+</template>
+
+
+
+
+
+	
+
+
+
+
+

@@ -1,0 +1,14 @@
+<template name="profiles">
+<ul>
+		{{#each r in ratings}}
+			 {{> comment  abc=r}}
+		{{/each}}
+	</ul>
+</template>
+
+<template name="comment">
+	<li>{{abc.firstname}} {{abc.lastname}}, and the nickname is {{abc.nickname}}. Year is {{abc.birthyear}}, and email is {{abc.email}}.
+	<span class="js-delete-comment glyphicon glyphicon-remove" aria-hidden="true">
+       </span>
+	</li>
+</template>

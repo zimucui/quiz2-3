@@ -12,3 +12,11 @@ Meteor.publish("userData",function () {
 		this.ready();
 	}
 });
+
+Meteor.publish("settings", function() {
+	if (this.userId) {
+		return Settings.find({createdBy: this.userId});
+	} else {
+		this.ready();
+	}
+});
