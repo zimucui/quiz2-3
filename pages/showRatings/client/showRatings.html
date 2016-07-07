@@ -62,14 +62,14 @@
 
 <template name="Pname">
 	 <select class="nameList">
-  	
+  	<option>start to select</option>
   	<option value="math">math professors</option>
   	<option value="cosi">cosi professors</option>
   </select>
 
   <br>
   {{# if cosiProChosen}}
-  <p>cosi Pro</p>
+  <p>cosi Professors</p>
    		<div class="allcosiNameList">
    			<ul>
    				<li>richard</li>
@@ -88,7 +88,7 @@
   {{/if}}
 
   {{# if mathProChosen}}
-  <p>Math Pro</p>
+  <p>Math Professors</p>
   	<div class="allmathNameList">
    			<ul>
    				<li>mark</li>

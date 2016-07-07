@@ -1,6 +1,9 @@
 Template.Pname.onCreated(function() {
-  this.cosiProChosen = new ReactiveVar(false);
-  this.mathProChosen = new ReactiveVar(false);
+  this.templateDictionary = new ReactiveDict();
+  this.templateDictionary.set('cosiProChosen', false);
+  this.templateDictionary = new ReactiveDict();
+  this.templateDictionary.set('mathProChosen', false);
+
   
 });
 
@@ -9,11 +12,11 @@ Template.Pname.onCreated(function() {
 Template.Pname.helpers({
 
 	cosiProChosen: function(){
-		return Template.instance().cosiProChosen.get();
+		return Template.instance().templateDictionary.get('cosiProChosen');
 	},
 
 	mathProChosen:function(){
-		return Template.instance().mathProChosen.get();
+		return Template.instance().templateDictionary.get('mathProChosen');
 	},
 
 });
@@ -24,14 +27,14 @@ Template.Pname.events({
 	
 
 	"change select": function(event, template){
-		console.log("here is events");
-		if($(event.target).val()=="cosi"){
-			template.cosiProChosen.set(true);
-			template.mathProChosen.set(false);
+
+		if($(event.target).val()==='cosi'){
+			template.templateDictionary.set('cosiProChosen',true);
+			template.templateDictionary.set('mathProChosen',false);
 			console.log("cosi true");
-		}else if($(event.target).val()=="math"){
-			template.mathProChosen.set(true);
-			template.cosiProChosen.set(false);
+		}else if($(event.target).val()==='math'){
+			template.templateDictionary.set('cosiProChosen',false);
+			template.templateDictionary.set('mathProChosen',true);
 			console.log("math true");
 		}
 
