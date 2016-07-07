@@ -1,13 +1,58 @@
+Template.Pname.onCreated(function() {
+  this.cosiProChosen = new ReactiveVar(false);
+  this.mathProChosen = new ReactiveVar(false);
+  
+});
+
+
+
+Template.Pname.helpers({
+
+	cosiProChosen: function(){
+		return Template.instance().cosiProChosen.get();
+	},
+
+	mathProChosen:function(){
+		return Template.instance().mathProChosen.get();
+	},
+
+});
+
+
+Template.Pname.events({
+
+	
+
+	"change select": function(event, template){
+		console.log("here is events");
+		if($(event.target).val()=="cosi"){
+			template.cosiProChosen.set(true);
+			template.mathProChosen.set(false);
+			console.log("cosi true");
+		}else if($(event.target).val()=="math"){
+			template.mathProChosen.set(true);
+			template.cosiProChosen.set(false);
+			console.log("math true");
+		}
+
+				
+	},
+
+
+
+});
+
 
 
 Template.showRatings.helpers({
 	ratings:function(){
 		//const name = $(".js-name").val();
 		return Rprofessor.find({});
-	}
+	},
 
 
-})
+});
+
 
 Template.showRatings.events({
 
@@ -61,8 +106,9 @@ Template.showRatings.events({
 		document.getElementById("5").checked = false;
 		$(".js-time").val("");
 
-	}
+	},
 
+	
 
 
 })

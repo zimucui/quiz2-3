@@ -23,6 +23,10 @@
 	<button class="js-addDay">Submit review</button>
 	</ul>
 	<hr>
+	<br>
+	{{> Pname}}
+ 	
+ 	<hr>
 	<ul>
 		{{#each r in ratings}}
 			 {{> comment  abc=r}}
@@ -47,6 +51,64 @@
 
 <template name="showprofessor">
 	{{offeredBy}} is offereing {{classname}} to all of us!
+</template>
+
+
+
+
+
+
+
+
+<template name="Pname">
+	 <select class="nameList">
+  	
+  	<option value="math">math professors</option>
+  	<option value="cosi">cosi professors</option>
+  </select>
+
+  <br>
+  {{# if cosiProChosen}}
+  <p>cosi Pro</p>
+   		<div class="allcosiNameList">
+   			<ul>
+   				<li>richard</li>
+   				<li>liuba</li>
+   				<li>storer</li>
+   				<li>mitch</li>
+   				<li>antonella</li>
+   				<li>lotus</li>
+   				<li>tim</li>
+   				<li>pengyu</li>
+   				<li>harry</li>
+   				<li>sophia</li>
+   				<li>jordan</li>
+   			</ul>
+   		</div>
+  {{/if}}
+
+  {{# if mathProChosen}}
+  <p>Math Pro</p>
+  	<div class="allmathNameList">
+   			<ul>
+   				<li>mark</li>
+   				<li>joel</li>
+   				<li>olivier</li>
+   				<li>ruth</li>
+   				<li>kiyoshi</li>
+   				<li>aida</li>
+   				<li>dmitry</li>
+   				<li>alan</li>
+   				<li>keith</li>
+   				<li>susan</li>
+   				<li>gail</li>
+   				<li>daniel</li>
+   				<li>christopher</li>
+
+   			</ul>
+   		</div>
+
+  {{/if}}
 </template>
 
 	
