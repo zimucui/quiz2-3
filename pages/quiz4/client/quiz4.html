@@ -1,0 +1,47 @@
+<template name="quiz4">
+	<h1>Quiz4</h1>
+	<br>
+	<p>By Zimu Cui</p>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-0 bg-info">
+		<h2>update your bio below</h2>
+		<br>
+		Name: <input type="text" class="js-name">
+		<br>
+		Bio:
+		<textarea type="text" class="form-control js-evaluation" rows="8" column="8"></textarea>
+		<button class="js-addBio btn btn-secondary btn-sm active">Update Bio</button>
+		</div>
+
+
+
+
+		<div class="col-md-6 col-md-offset-0 bg-warning">
+		<h2>or select a bio to review</h2>
+		<ul>
+		{{#each r in quizsubmit}}
+			 {{> submit  abc=r}}
+		{{/each}}
+	</ul>
+		</div>
+	</div>
+</template>
+
+
+<template name="submit">
+<li><a href="/showresults/{{abc._id}}">{{abc.name}}</a>
+</li>
+</template>
+
+<template name="showresults">
+<div class="jumbotron">
+<h1>{{name}}</h1>
+  	<p>{{commentparagraph}}</p>
+ </div>
+</template>
+
+
+
+
+
+

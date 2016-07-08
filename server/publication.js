@@ -4,6 +4,9 @@ Meteor.publish("comments",
 Meteor.publish("rprofessor",
 	function() {return Rprofessor.find();})
 
+Meteor.publish("quizinput",
+	function() {return Quizinput.find();})
+
 Meteor.publish("userData",function () {
 	if (this.userId) {
 		return Meteor.users.find({_ie: this.userId},
