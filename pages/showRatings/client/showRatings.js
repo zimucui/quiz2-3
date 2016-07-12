@@ -1,8 +1,16 @@
 Template.Pname.onCreated(function() {
   this.templateDictionary = new ReactiveDict();
-  this.templateDictionary.set('cosiProChosen', false);
+  this.templateDictionary.set('coinerChosen', false);
   this.templateDictionary = new ReactiveDict();
-  this.templateDictionary.set('mathProChosen', false);
+  this.templateDictionary.set('hickeyChosen', false);
+  this.templateDictionary = new ReactiveDict();
+  this.templateDictionary.set('epsteinChosen', false);
+  this.templateDictionary = new ReactiveDict();
+  this.templateDictionary.set('strogatzChosen', false);
+  this.templateDictionary = new ReactiveDict();
+  this.templateDictionary.set('cohenChosen', false);
+  this.templateDictionary = new ReactiveDict();
+  this.templateDictionary.set('funnyChosen', false);
 
   
 });
@@ -11,12 +19,28 @@ Template.Pname.onCreated(function() {
 
 Template.Pname.helpers({
 
-	cosiProChosen: function(){
-		return Template.instance().templateDictionary.get('cosiProChosen');
+	coinerChosen: function(){
+		return Template.instance().templateDictionary.get('coinerChosen');
 	},
 
-	mathProChosen:function(){
-		return Template.instance().templateDictionary.get('mathProChosen');
+	hickeyChosen:function(){
+		return Template.instance().templateDictionary.get('hickeyChosen');
+	},
+
+	epsteinChosen:function(){
+		return Template.instance().templateDictionary.get('epsteinChosen');
+	},
+
+	strogatzChosen:function(){
+		return Template.instance().templateDictionary.get('strogatzChosen');
+	},
+
+	cohenChosen:function(){
+		return Template.instance().templateDictionary.get('cohenChosen');
+	},
+
+	funnyChosen:function(){
+		return Template.instance().templateDictionary.get('funnyChosen');
 	},
 
 });
@@ -28,16 +52,50 @@ Template.Pname.events({
 
 	"change select": function(event, template){
 
-		if($(event.target).val()==='cosi'){
-			template.templateDictionary.set('cosiProChosen',true);
-			template.templateDictionary.set('mathProChosen',false);
-			console.log("cosi true");
-		}else if($(event.target).val()==='math'){
-			template.templateDictionary.set('cosiProChosen',false);
-			template.templateDictionary.set('mathProChosen',true);
-			console.log("math true");
+		if($(event.target).val()==='coiner'){
+			template.templateDictionary.set('coinerChosen',true);
+			template.templateDictionary.set('hickeyChosen',false);
+			template.templateDictionary.set('epsteinChosen',false);
+			template.templateDictionary.set('strogatzChosen',false);
+			template.templateDictionary.set('cohenChosen',false);
+			template.templateDictionary.set('funnyChosen',false);
+		}else if($(event.target).val()==='hickey'){
+			template.templateDictionary.set('coinerChosen',false);
+			template.templateDictionary.set('hickeyChosen',true);
+			template.templateDictionary.set('epsteinChosen',false);
+			template.templateDictionary.set('strogatzChosen',false);
+			template.templateDictionary.set('cohenChosen',false);
+			template.templateDictionary.set('funnyChosen',false);
+			
+		}else if($(event.target).val()==='epstein'){
+			template.templateDictionary.set('coinerChosen',false);
+			template.templateDictionary.set('hickeyChosen',false);
+			template.templateDictionary.set('epsteinChosen',true);
+			template.templateDictionary.set('strogatzChosen',false);
+			template.templateDictionary.set('cohenChosen',false);
+			template.templateDictionary.set('funnyChosen',false);
+		}else if($(event.target).val()==='strogatz'){
+			template.templateDictionary.set('coinerChosen',false);
+			template.templateDictionary.set('hickeyChosen',false);
+			template.templateDictionary.set('epsteinChosen',false);
+			template.templateDictionary.set('strogatzChosen',true);
+			template.templateDictionary.set('cohenChosen',false);
+			template.templateDictionary.set('funnyChosen',false);
+		}else if($(event.target).val()==='cohen'){
+			template.templateDictionary.set('coinerChosen',false);
+			template.templateDictionary.set('hickeyChosen',false);
+			template.templateDictionary.set('epsteinChosen',false);
+			template.templateDictionary.set('strogatzChosen',false);
+			template.templateDictionary.set('cohenChosen',true);
+			template.templateDictionary.set('funnyChosen',false);
+		}else if($(event.target).val()==='funny'){
+			template.templateDictionary.set('coinerChosen',false);
+			template.templateDictionary.set('hickeyChosen',false);
+			template.templateDictionary.set('epsteinChosen',false);
+			template.templateDictionary.set('strogatzChosen',false);
+			template.templateDictionary.set('cohenChosen',false);
+			template.templateDictionary.set('funnyChosen',true);
 		}
-
 				
 	},
 

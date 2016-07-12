@@ -1,12 +1,13 @@
 <template name="showRatings">
+<hr>
 
  {{#if currentUser}}
 	<div class="jumbotron">
   	<h2>Available comments</h2>
-  	</div>
+  
 	<hr>
 	<ul>
-	<li>Professor's name: <input type="text" class="js-name"></li>
+	<li>Professor's name: <input type="text"  class="js-name"></li>
 	<li>class code: <input type="text" class="js-offered"></li>
 	<li>academic year: <input type="text" class="js-time"></li>
 	<li>grade you received: <input type="text" class="js-grade"></li>
@@ -32,7 +33,7 @@
 			 {{> comment  abc=r}}
 		{{/each}}
 	</ul>
-
+</div>
 {{else}}
 	<h2>You must log in to make comments!</h2>
  {{/if}}
@@ -61,54 +62,92 @@
 
 
 <template name="Pname">
+  (Here are some video clips about Brandeis Professors...)<br>
+  <br>
+  <br>
 	 <select class="nameList">
   	<option>start to select</option>
-  	<option value="math">math professors</option>
-  	<option value="cosi">cosi professors</option>
+  	<option value="coiner">Prof. Coiner</option>
+  	<option value="hickey">Prof. Hickey</option>
+    <option value="epstein">Prof. Epstein</option>
+    <option value="strogatz">Prof. Strogatz</option>
+    <option value="cohen">Prof. Cohen</option>
+    <option value="funny">Funny video</option>
   </select>
 
   <br>
-  {{# if cosiProChosen}}
-  <p>cosi Professors</p>
-   		<div class="allcosiNameList">
-   			<ul>
-   				<li>richard</li>
-   				<li>liuba</li>
-   				<li>storer</li>
-   				<li>mitch</li>
-   				<li>antonella</li>
-   				<li>lotus</li>
-   				<li>tim</li>
-   				<li>pengyu</li>
-   				<li>harry</li>
-   				<li>sophia</li>
-   				<li>jordan</li>
-   			</ul>
+  {{# if coinerChosen}}
+   		<div>
+   	  <h3>Prof.Coiner</h3>
+      <iframe width="820" height="700" src="https://www.youtube.com/embed/zm9e7V_Tr1E" frameborder="0" allowfullscreen></iframe>
    		</div>
   {{/if}}
 
-  {{# if mathProChosen}}
-  <p>Math Professors</p>
-  	<div class="allmathNameList">
-   			<ul>
-   				<li>mark</li>
-   				<li>joel</li>
-   				<li>olivier</li>
-   				<li>ruth</li>
-   				<li>kiyoshi</li>
-   				<li>aida</li>
-   				<li>dmitry</li>
-   				<li>alan</li>
-   				<li>keith</li>
-   				<li>susan</li>
-   				<li>gail</li>
-   				<li>daniel</li>
-   				<li>christopher</li>
 
-   			</ul>
-   		</div>
+  {{# if hickeyChosen}}
+      <div>
+<h3>Prof.Hickey #1</h3>
+<iframe width="820" height="700" src="https://www.youtube.com/embed/nLJo00QmGys" frameborder="0" allowfullscreen></iframe>
 
+<br>
+<h3>Prof.Hickey #2</h3>
+<iframe width="820" height="700" src="https://www.youtube.com/embed/40k2fitPbSE" frameborder="0" allowfullscreen></iframe>
+
+<br>
+<h3>Prof.Hickey #3</h3>
+<iframe width="820" height="700" src="https://www.youtube.com/embed/sK2RBCsZuXw" frameborder="0" allowfullscreen></iframe>
+
+<br>
+<h3>Prof.Hickey #4</h3>
+<iframe width="820" height="700" src="https://www.youtube.com/embed/bs0aUOm3b1M" frameborder="0" allowfullscreen></iframe>
+
+      <iframe width="820" height="700" src="https://www.youtube.com/embed/zm9e7V_Tr1E" frameborder="0" allowfullscreen></iframe>
+      </div>
   {{/if}}
+
+
+
+  {{# if epsteinChosen}}
+  <p>Professor Epstein</p>
+      <div>
+<h3>Prof.Epstein</h3>
+<iframe width="820" height="700" src="https://www.youtube.com/embed/fdKWNbFb4uM" frameborder="0" allowfullscreen></iframe>
+      </div>
+  {{/if}}
+
+
+  {{# if strogatzChosen}}
+      <div>
+      <h3>Prof.Strogatz</h3>
+<iframe width="820" height="700" src="https://www.youtube.com/embed/8R33KWPmqlo" frameborder="0" allowfullscreen></iframe> 
+      </div>
+  {{/if}}
+
+  {{# if strogatzChosen}}
+      <div>
+      <h3>Prof.Strogatz</h3>
+<iframe width="820" height="700" src="https://www.youtube.com/embed/8R33KWPmqlo" frameborder="0" allowfullscreen></iframe> 
+      </div>
+  {{/if}}
+
+{{# if cohenChosen}}
+      <div>
+      <h3>Prof.Cohen</h3>
+<iframe width="820" height="700" src="https://www.youtube.com/embed/bPBxqfFK804?list=PLt99vV5Y7Yf8qpcVs2GOcMMTxECXo_U9w" frameborder="0" allowfullscreen></iframe>
+
+      </div>
+  {{/if}}
+
+   {{# if funnyChosen}}
+      <div>
+      <h3>fUNNY VIDEO</h3>
+<iframe width="820" height="700" src="https://www.youtube.com/embed/PYtdyL_Bm9U" frameborder="0" allowfullscreen></iframe> 
+</div>
+  {{/if}}
+
+
+
+  
 </template>
 
 	

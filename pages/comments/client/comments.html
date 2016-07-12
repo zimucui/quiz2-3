@@ -1,9 +1,9 @@
 <template name="comments">
-
+<hr>
   {{#if currentUser}}
   	<div class="jumbotron">
-  	<h3>Please give me the comment about this web</h3>
-  	</div>
+  	<h3>Please give me your comment about this web</h3>
+  	
 	<input type="text" class="form-control js-user-comment">
 	<br>
 	(please rate the quality of this web: 1 means bad, 2 means so-so, 3 means above average, 4 means good, 5 means excellent)
@@ -21,18 +21,18 @@
     <p>(NOTE: If you want to refer to professor from other colleges, check out this link)
     <a href="http://www.ratemyprofessors.com/">rate-my-professor</a>
     </p>
-  {{else}}
-	<h2>You must log in to make comments!</h2>
-  {{/if}}
+ 
 
 	<hr>
 	<ul>
 	{{#each c in commentsdata}}
 	   {{> commentRow  comment=c}}
 	{{/each}}
-
     </ul>
-
+    </div>
+     {{else}}
+	<h2>You must log in to make comments!</h2>
+  {{/if}}
 
 </template>
 

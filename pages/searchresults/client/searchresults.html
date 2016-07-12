@@ -1,20 +1,25 @@
 <template name="searchresults">
+<hr>
 	<div class="jumbotron">
-  <h1>Search Results</h1>
-  </div>
+  <h1>Search Results:</h1>
+  <br>
+  <br>
+  <br>
   <ul>
     {{#each r in resultData}}
     <li>
 		<div class="panel panel-success">
 			<div class="panel-body">
-    			<a href="/showsearch/{{r._id}}"><h4>{{r.offeredBy}}</h4></a>
+    		<h3>{{r.offeredBy}}</h3>
     		</div>
-    		 <div>offered [{{r.classname}}] in [{{r.time}}]. The meeting days were: [{{r.days}}]. My final grade received in this course
-         was [{{r.grade}}], and my opinion about this professor and his course is: [{{r.evaluation}}].
-    		 </div>
+    		 <p>offered [{{r.classname}}] in [{{r.time}}].<br> The meeting days were: [{{r.days}}].<br> My final grade received in this course
+         was [{{r.grade}}].<br> My opinion about this professor and his course is: [{{r.evaluation}}].
+    		 </p>
     	</div>
     </li>
+
     
     {{/each}}
   </ul>
+  </div>
   </template>

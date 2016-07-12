@@ -1,24 +1,59 @@
 <template name="home">
+<hr>
 
 
-
-<div class="{{theColor}}">
-  <h1 >Brandeis Comment My Professor</h1>
-  <p>Welcome to my Personal App!</p>
-
-   </div>
-  {{#if currentUser}}
-     <p>Congratulations for getting logged in!</p>
-  {{else}}
-     <p>You better log in!!!</p>
-  {{/if}}
+  <div class="jumbotron">
+  <p>Below are professors' name from different department. Click img to go to their home pages</p>
   <br>
-  <select class="js-color">
-  	<option>bg-info</option>
-  	<option>bg-warning</option>
-  </select>
-  Color:{{theColor}}<br>
-  Counter:{{theCounter}}<br>
-  <button class="js-pusher">push me</button>
- 
+  <br>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <a href="http://www.brandeis.edu/departments/mathematics/people/index.html"><img src="http://www.brandeis.edu/departments/mathematics/images/mathdept2015.jpg" alt="Math Department" width="1000" height="1200"></a>
+      <div class="carousel-caption">
+       Math Department
+      </div>
+    </div>
+    <div class="item">
+      
+      <a href="http://www.bio.brandeis.edu/faculty/list_lastname.html"><img src="http://www.softwarecountry.com/media/1174/machine-learning-pipeline-for-biochemistry.jpg" alt="biochemistry" width="1000" height="100"></a>
+      <div class="carousel-caption">
+        Biochemistry
+      </div>
+    </div>
+    <div class="item ">
+      <a href="http://www.cs.brandeis.edu/?page_id=286"><img src="http://www.mccormick.northwestern.edu/eecs/computer-science/images/featured-image/detecting-malicious-ads.jpg" alt="computer science" width="1000" height="1200"></a>
+      <div class="carousel-caption">
+        Computer Science
+      </div>
+    </div>
+
+    <div class="item">
+     <a href="http://www.brandeis.edu/departments/history/faculty/index.html"><img src="http://www.hettinger.k12.nd.us/jasonlefebre/files/2012/09/slide-History.jpg"  alt="history"  width="100%" height="50%"></a>
+      <div class="carousel-caption">
+        History
+      </div>
+    </div>
+    
+   </div>
+ <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  </div>
+</div>
+
 </template>
