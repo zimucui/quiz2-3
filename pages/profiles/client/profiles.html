@@ -1,9 +1,13 @@
 <template name="profiles">
+{{#if currentUser}}
 <ul>
 		{{#each r in ratings}}
 			 {{> comment  abc=r}}
 		{{/each}}
 	</ul>
+{{else}}
+	<h2>You must log in to make comments!</h2>
+ {{/if}}
 </template>
 
 <template name="comment">
